@@ -1,0 +1,81 @@
+// background color
+$primaryBlue: #101f3f;
+$secondaryBlue: #1c2a49;
+$darkBlue: #172c48;
+$darkBlue2: #111f3b;
+$darkBlue3: #2b3d55;
+$brightBlue: #304470;
+$opacityBlack: rgba(0, 0, 0, 0.336);
+$opacityWhite: rgba(255, 255, 255, 0.126);
+$opacityWhite2: rgba(255, 255, 255, 0.05);
+
+// text color
+$titleColor: #fff;
+$subTitleColor: #8c99ab;
+$linkColor: #dadada;
+$dividerColor: #3f5472;
+$tooltipColor: #000000;
+$textColor: #ffffff80;
+$titleColor2: #ff0101;
+
+// general color
+$white: #fff;
+$white2: #dadada;
+$yellow: #ffdb00;
+$purple: #bd4dbd;
+$gray: #ffffff28;
+$transparent: transparent;
+$green: #0daf94;
+$green2: #50e3c2;
+$green3: #158370;
+$green4: #17a08a;
+$blue: #4a90e2;
+$blue2: #429eff;
+$lightBlue: #2f4f58;
+$lightBlue2: #173b45;
+$orange: #e35050;
+$black: #000000;
+
+//general
+$primaryTransition: 0.5s ease-in-out;
+$secondaryTransition: 0.2s ease-in-out;
+$cardHoverTransition: all 0.3s;
+$primaryOpacity: 0.7;
+$secondaryOpacity: 0.2;
+$imageScale: 1.05;
+$baseZIndex: 3;
+$backdropZIndex: 2;
+$textFontsize: 14px;
+
+// component size
+$menuLeftWidth: 250px;
+$menuLeftWidthRes: 70px;
+$itemCardWidth: 200px;
+$itemZingchartWidth: 100px;
+$itemCardWidth: 120px;
+$smallCardHeight: 80px;
+
+$buttonSize: 50px;
+// styles
+$columnMargin: 20px;
+$borderRadiusImg: 5px;
+$primaryFontWeight: 700;
+$secondaryFontWeight: 900;
+
+// svgs
+$zingmp3Logo: url(https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/backgrounds/logo-dark.svg);
+
+$zingmp3LogoIcon: url(https://zjs.zmdcdn.me/zmp3-desktop/releases/v1.7.29/static/media/icon_zing_mp3_60.f6b51045.svg);
+
+$zingpm3UserIcon: url(https://avatar.talk.zdn.vn/default);
+
+// breakpoints
+$xs: 0px;
+$sm: 600px;
+$md: 900px;
+$lg: 1200px;
+$xl: 1536px;
+
+//
+$minWidthPage: 800px;
+$optionPopupHeight: 44px;
