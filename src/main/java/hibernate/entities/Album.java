@@ -4,12 +4,16 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.springframework.web.multipart.MultipartFile;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
@@ -24,6 +28,13 @@ public class Album {
 	@Column(name="name")
 	private String name;
 	
+	@Column(name="description")
+	private String description;
+	
+	@Column(name="image_file")
+	@Lob
+	private MultipartFile imageFile;
+	
 	@Column(name="image_url")
 	private String imageUrl;
 	
@@ -32,26 +43,35 @@ public class Album {
 	private Set<Song> songs;
 
 	public Album() {}
+	
+	// upload file
+	public Album(String name, String description) {
+		this.name = name;
+		this.description = description;
+	}
+	
+	// upload file
+	public Album(String name, String description, MultipartFile imageFile) {
+		this.name = name;
+		this.imageFile = imageFile;
+		this.description = description;
+	}
 
-	public Album(String id, String name, String imageUrl, Set<Song> songs) {
+	public Album(String id, String name, String imageUrl, String description, Set<Song> songs) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.imageUrl = imageUrl;
+		this.description = description;
 		this.songs = songs;
 	}
 
-	public Album(String name, String imageUrl, Set<Song> songs) {
+	public Album(String name, String imageUrl, String description, Set<Song> songs) {
 		super();
 		this.name = name;
 		this.imageUrl = imageUrl;
 		this.songs = songs;
-	}
-
-	public Album(String name, String imageUrl) {
-		super();
-		this.name = name;
-		this.imageUrl = imageUrl;
+		this.description = description;
 	}
 
 	public String getId() {
@@ -84,12 +104,27 @@ public class Album {
 
 	public void setSongs(Set<Song> songs) {
 		this.songs = songs;
+	}	
+
+	public MultipartFile getImageFile() {
+		return imageFile;
+	}
+
+	public void setImageFile(MultipartFile imageFile) {
+		this.imageFile = imageFile;
+	}
+	
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	@Override
 	public String toString() {
 		return "Album [id=" + id + ", name=" + name + ", imageUrl=" + imageUrl + ", songs=" + songs + "]";
 	}
-	
 	
 }

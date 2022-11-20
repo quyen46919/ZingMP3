@@ -1,18 +1,19 @@
-<%@ page language="java" contentType="text/html; ; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
     <link rel="icon"
         href="https://zjs.zmdcdn.me/zmp3-desktop/releases/v1.7.29/static/media/icon_zing_mp3_60.f6b51045.svg" />
     <title>ZingMP3 | Admin</title>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
     <style><%@include file="/WEB-INF/resources/pages/admin_page/styles.css"%></style>
 </head>
 
@@ -23,7 +24,7 @@
         <div class="admin-page">
             <jsp:include page="../../components/header/index.jsp"></jsp:include>
             <div class="admin-page__favorite-song">
-                <h2>QUẢN LÝ QUẢN TRỊ VIÊN</h2>
+                <h2>QUẢN LÝ - QUẢN TRỊ VIÊN</h2>
                 <div id="tabs" class="admin-page__favorite-song--header">
                     <ul class="button-tabs">
                         <li>
@@ -167,12 +168,11 @@
                                                         </div>
                                                     </div>
                                                     <div class="admin-page__favorite-song--title">
-                                                        <span>Đánh Mất Em
-                                                            (Lofi
-                                                            Version)</span>
-                                                        <span><a href="">Quang Đăng
-                                                                Trần</a>
-                                                            <a href="">,Freak D</a></span>
+                                                        <span>Đánh Mất Em (Lofi Version)</span>
+                                                        <span>
+	                                                        <a href="">Quang Đăng Trần</a>
+	                                                        <a href="">Freak D</a>
+                                                        </span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -341,14 +341,20 @@
                                 </div>
                                 <div id="tabsChild-2">
                                     <div>
-                                        <form action="" class="admin-page__form-inputs">
-                                            <input type="text" placeholder="Tên album" />
-                                            <input type="text" placeholder="Ca sĩ tham gia" />
-                                            <input type="file" name="image" />
+                                        <form:form
+	                                        action="${pageContext.request.contextPath}/admin/create-album" 
+	                                        class="admin-page__form-inputs" 
+	                                        method="POST"
+	                                        enctype="multipart/form-data"
+	                                        modelAttribute="album"
+	                                    >
+                                            <form:input type="text" placeholder="Tên album" path="name"/>
+                                            <form:input type="text" placeholder="Mô tả của album" path="description"/>
+                                            <input type="file" name="imageFile" path="imageFile"/>
                                             <button type="submit">
                                                 Tạo mới
                                             </button>
-                                        </form>
+                                        </form:form>
                                     </div>
                                 </div>
                             </div>
@@ -391,8 +397,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="admin-page__favorite-song--title">
-                                                        <span>Phan Mạnh
-                                                            Quỳnh</span>
+                                                        <span>Phan Mạnh Quỳnh</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -452,18 +457,17 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="../../components/header/accountPopUp.js"></script>
 </body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script><%@include file="/WEB-INF/resources/components/header/accountPopUp.js"%></script>
 <script>
     $(function () {
         $('#tabs, #tabs1, #tabs2, #tabs3').tabs();
     });
-    <%@include file="/WEB-INF/resources/components/header/accountPopUp.js"%>
 </script>
 
 </html>

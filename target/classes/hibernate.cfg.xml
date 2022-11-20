@@ -7,7 +7,7 @@
     <session-factory>
         <!-- JDBC Database connection settings -->
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="connection.url">jdbc:mysql://127.0.0.1:3307/zingmp3?useSSL=false&amp;serverTimezone=UTC</property>
+        <property name="connection.url">jdbc:mysql://127.0.0.1:3307/zingmp3?characterEncoding=UTF-8</property>
         <property name="connection.username">root</property>
         <property name="connection.password"></property>
 
@@ -32,6 +32,12 @@
 	 	<property name="hibernate.c3p0.unreturnedConnectionTimeout">60</property>
  		<property name="hibernate.c3p0.debugUnreturnedConnectionStackTraces">60</property>
  		<property name="spring.jpa.hibernate.ddl-auto">auto</property>
+ 		
+ 		<!-- Upload file -->
+ 		<property name="spring.servlet.multipart.max-file-size">128MB</property>
+		<property name="spring.servlet.multipart.max-request-size">128MB</property>
+		<property name="spring.http.multipart.enabled">true</property>
+		<property name="upload.path">/public/imgs/</property>
 
     </session-factory>
 
