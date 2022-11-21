@@ -36,8 +36,8 @@ public class User {
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(
 			name="user_favorite_songs", 
-			joinColumns = @JoinColumn(name ="user_id") , 
-			inverseJoinColumns = @JoinColumn(name ="song_id")
+			joinColumns = @JoinColumn(name ="userId") , 
+			inverseJoinColumns = @JoinColumn(name ="songId")
 	)
 	@JsonManagedReference
 	private Set<Song> favoriteSongs;

@@ -4,7 +4,6 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -31,11 +30,11 @@ public class Album {
 	@Column(name="description")
 	private String description;
 	
-	@Column(name="image_file")
+	@Column(name="imageFile")
 	@Lob
 	private MultipartFile imageFile;
 	
-	@Column(name="image_url")
+	@Column(name="imageUrl")
 	private String imageUrl;
 	
 	@OneToMany(mappedBy = "album", cascade = CascadeType.ALL)
@@ -44,17 +43,26 @@ public class Album {
 
 	public Album() {}
 	
-	// upload file
+	public Album(String id) {
+		this.id = id;
+	}
+	
 	public Album(String name, String description) {
 		this.name = name;
 		this.description = description;
 	}
 	
-	// upload file
 	public Album(String name, String description, MultipartFile imageFile) {
 		this.name = name;
 		this.imageFile = imageFile;
 		this.description = description;
+	}
+	
+	public Album(String id, String name, String description, String imageUrl) {
+		this.id = id;
+		this.name = name;
+		this.description = description;
+		this.imageUrl = imageUrl;
 	}
 
 	public Album(String id, String name, String imageUrl, String description, Set<Song> songs) {

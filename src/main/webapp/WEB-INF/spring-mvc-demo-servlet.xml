@@ -67,8 +67,7 @@
 	<tx:annotation-driven transaction-manager="myTransactionManager" proxy-target-class="true"/>
 
 	<!-- Add support for reading web resources: css, images, js, etc ... -->
-	<mvc:resources location="/resources/"
-		mapping="/resources/**"></mvc:resources>
+	<mvc:resources location="/resources/" mapping="/resources/**"></mvc:resources>
 
 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 	    <property name="maxUploadSize" value="10000000"/>

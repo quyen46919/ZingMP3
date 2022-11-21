@@ -23,14 +23,14 @@ public class UserSong {
 	@Column(name="singer")
 	private String singer;
 	
-	@Column(name="image_url")
+	@Column(name="imageUrl")
 	private String imageUrl;
 	
 	@Column(name="source")
 	private String source;
 	
 	@ManyToOne
-	@JoinColumn(name="user_id", referencedColumnName = "id")
+	@JoinColumn(name="userId", referencedColumnName = "id")
 	private User user;
 	
 	public UserSong() {}

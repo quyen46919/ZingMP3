@@ -382,6 +382,26 @@ button {
 .admin-page h2 {
   margin: 0;
 }
+
+.admin-page__error{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 2px;
+	background-color: rgb(253, 237, 237);
+	color: rgb(95, 33, 32);
+	margin-top: 10px;
+	padding: 0px 10px;
+}
+
+.admin-page__error span {
+	min-height: 40px;
+	line-height: 40px;
+}
+
 .admin-page__favorite-song {
   width: 100%;
   display: flex;
@@ -508,7 +528,7 @@ button {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 .admin-page__favorite-song--item:hover .profile-page__favorite-song--cover {
   opacity: 1;
@@ -622,6 +642,13 @@ button {
   position: relative;
   cursor: pointer;
 }
+
+.admin-page__favorite-song--img img {
+  height: 45px;
+  width: 45px;
+  object-fit: cover;
+}
+
 .admin-page__favorite-song--cover {
   height: 45px;
   width: 45px;
@@ -667,7 +694,7 @@ button {
 }
 .admin-page__favorite-song--time-out {
   color: #dadada;
-  width: 14%;
+  width: 15%;
   font-size: 12px;
   font-weight: 700;
   margin: 0;
@@ -679,7 +706,9 @@ button {
   gap: 10px;
   position: relative;
 }
-.admin-page__favorite-song--time-out button {
+.admin-page__favorite-song--time-out button,
+.admin-page__favorite-song--time-out a {
+  width: fit-content;
   background-color: transparent;
   color: #fff;
   font-size: 16px;

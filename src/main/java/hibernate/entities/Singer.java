@@ -24,7 +24,7 @@ public class Singer {
 	@Column(name="name")
 	private String name;
 	
-	@Column(name="image_url")
+	@Column(name="imageUrl")
 	private String imageUrl;
 	
 	@Column(name="story")

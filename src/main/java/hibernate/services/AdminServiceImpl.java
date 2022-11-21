@@ -1,7 +1,10 @@
 package hibernate.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import hibernate.DAO.AlbumDAO;
 import hibernate.DAO.SongDAO;
@@ -20,11 +23,17 @@ public class AdminServiceImpl implements AdminService {
 	public Album createAlbum(Album album) {
 		return albumDAO.createAlbum(album);
 	}
+	
+	@Override
+	@Transactional
+	public List<Album> getAlbumList() {
+		return albumDAO.getAlbumList();
+	}
 
 	@Override
+	@Transactional
 	public boolean deleteAlbum(String albumId) {
-		// TODO Auto-generated method stub
-		return false;
+		return albumDAO.deleteAlbum(albumId);
 	}
 
 	@Override
@@ -37,5 +46,4 @@ public class AdminServiceImpl implements AdminService {
 		// TODO Auto-generated method stub
 		return false;
 	}
-
 }

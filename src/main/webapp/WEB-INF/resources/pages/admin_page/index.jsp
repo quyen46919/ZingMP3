@@ -278,65 +278,53 @@
                                     </li>
                                 </ul>
                                 <div id="tabsChild-1">
+							  		<%= "<div class='admin-page__error'><span>" + request.getParameter("albumErrorMsg") + "<span></div>" %>
                                     <div class="admin-page__favorite-song--table">
                                         <div class="admin-page__favorite-song--col-name">
                                             <h4>TÊN ALBUM</h4>
                                             <div class="admin-page__favorite-song--col-name-cover">
-                                                <h4>NGÀY TẠO</h4>
+                                                <h4>MÔ TẢ</h4>
                                                 <h4>THAO TÁC</h4>
                                             </div>
                                         </div>
+                                        
+                                        <c:forEach items="${albumList}" var="album">
                                         <div class="admin-page__favorite-song--item">
-                                            <div class="admin-page__favorite-song--template">
-                                                <div class="admin-page__favorite-song--number">
-                                                    <span><i class="fa-solid fa-music"></i></span>
-                                                    <div class="admin-page__favorite-song--backdrop">
-                                                        <input type="checkbox" name="" value="" />
-                                                    </div>
-                                                </div>
-                                                <div class="admin-page__favorite-song--song">
-                                                    <div class="admin-page__favorite-song--img">
-                                                        <img src="https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/2/2/e/6/22e64f95064e3a06f0f15091cacad02c.jpg"
-                                                            alt="" />
-                                                        <div class="admin-page__favorite-song--cover">
-                                                            <i class="fa-solid fa-play"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="admin-page__favorite-song--title">
-                                                        <span>Tuyển tập nhạc
-                                                            của Phan Mạnh
-                                                            Quỳnh</span>
-                                                        <span><a href="">Phan Mạnh
-                                                                Quỳnh</a></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="admin-page__favorite-song--album">
-                                                <span>18/11/2022</span>
-                                            </div>
-                                            <div class="admin-page__favorite-song--time-out">
-                                                <button>
-                                                    <i class="fa-solid fa-pen"></i>
-                                                </button>
-                                                <button>
-                                                    <i class="fa-solid fa-trash"></i>
-                                                </button>
-                                                <div class="admin-page__favorite-song--time-out-backdrop">
-                                                    <button>
-                                                        <i class="fa-solid fa-photo-film"></i>
-                                                    </button>
-                                                    <button>
-                                                        <i class="fa-solid fa-microphone"></i>
-                                                    </button>
-                                                    <button>
-                                                        <i class="fa-solid fa-heart"></i>
-                                                    </button>
-                                                    <button>
-                                                        <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
+	                                            <div class="admin-page__favorite-song--template">
+	                                                <div class="admin-page__favorite-song--number">
+	                                                    <span><i class="fa-solid fa-music"></i></span>
+	                                                    <div class="admin-page__favorite-song--backdrop">
+	                                                        <input type="checkbox" name="" value="" />
+	                                                    </div>
+	                                                </div>
+	                                                <div class="admin-page__favorite-song--song">
+	                                                    <div class="admin-page__favorite-song--img">
+	                                                    	<img src="${album.imageUrl}" alt="${album.name}"/>
+	                                                        <div class="admin-page__favorite-song--cover">
+	                                                            <i class="fa-solid fa-play"></i>
+	                                                        </div>
+	                                                    </div>
+	                                                    <div class="admin-page__favorite-song--title">
+	                                                        <span> <c:out value="${album.name}" /></span>
+	                                                        <span><a href=""><c:out value="${album.name}" /></a></span>
+	                                                    </div>
+	                                                </div>
+	                                            </div>
+	                                            <div class="admin-page__favorite-song--album">
+	                                                <span><c:out value="${album.description}" /></span>
+	                                            </div>
+	                                            <div class="admin-page__favorite-song--time-out">
+	                                                <button>
+	                                                    <i class="fa-solid fa-pen"></i>
+	                                                </button>
+                                                    <a href="${pageContext.request.contextPath}/admin/delete-album?id=${album.id}">
+		                                                <button>
+		                                                    	<i class="fa-solid fa-trash"></i>
+		                                                </button>
+                                                    </a>
+	                                            </div>
                                         </div>
+										</c:forEach>
                                     </div>
                                 </div>
                                 <div id="tabsChild-2">
@@ -465,9 +453,13 @@
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 <script><%@include file="/WEB-INF/resources/components/header/accountPopUp.js"%></script>
 <script>
-    $(function () {
-        $('#tabs, #tabs1, #tabs2, #tabs3').tabs();
-    });
+	$(function () {
+	    $('#tabs, #tabs1, #tabs2, #tabs3').tabs();
+	});
+   if ($('.admin-page__error span').text() == 'null') {
+   		$('.admin-page__error').css("display", "none");
+   }
+
 </script>
 
 </html>

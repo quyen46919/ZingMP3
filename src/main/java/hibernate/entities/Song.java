@@ -33,7 +33,7 @@ public class Song {
 	@Column(name="type")
 	private String type;
 	
-	@Column(name="image_url")
+	@Column(name="imageUrl")
 	private String imageUrl;
 
 	@Column(name="source")
@@ -44,11 +44,11 @@ public class Song {
 	private Set<User> likes;
 	
 	@ManyToOne
-	@JoinColumn(name="album_id", referencedColumnName = "id", nullable = true)
+	@JoinColumn(name="albumId", referencedColumnName = "id", nullable = true)
 	private Album album;
 	
 	@ManyToOne
-	@JoinColumn(name="singer_id", referencedColumnName = "id")
+	@JoinColumn(name="singerId", referencedColumnName = "id")
 	private Singer singer;
 
 	public Song() {}
