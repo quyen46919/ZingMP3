@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; ; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +26,7 @@
                 <div class="album-page__content--left">
                     <div class="album-page__content--cover">
                         <div class="album-page__content--img">
-                            <img src="https://photo-resize-zmp3.zmdcdn.me/w600_r1x1_webp/cover/8/b/1/8/8b18b6584e756ef372787193e2bc19e3.jpg"
+                            <img src="${album.imageUrl }"
                                 alt="" />
                         </div>
                         <div class="album-page__content--cover-backdrop">
@@ -34,24 +35,16 @@
                     </div>
                     <div class="album-page__content--wire">
                         <div class="album-page__content--title">
-                            <h4>Do You Right (EP)</h4>
-                            <span><a href="">Evy</a> * <span>14/10/2022</span></span>
-                            <span>1 người yêu thích</span>
-
+                            <h4><c:out value="${album.name}"></c:out></h4>
+                            <span><c:out value="${album.description }"/></span>
                         </div>
                         <div class="album-page__content--wire-2">
-                            <button class="album-page__content--playAll">
-                                <i class="fas fa-play"></i> PHÁT TẤT CẢ
-                            </button>
                             <div class="album-page__content--icon">
                                 <button><i class="far fa-heart"></i></button>
                                 <button><i class="fa fa-ellipsis-h" aria-hidden="true"></i></button>
                             </div>
                         </div>
-
                     </div>
-
-
                 </div>
                 <div class="album-page__content--right">
                     <div class="album-page__content--song">
@@ -65,108 +58,41 @@
                             </div>
                         </div>
                         <div class="album-page__content--element">
-                            <div class="album-page__content--card">
-                                <div class="album-page__content--item">
-                                    <div class="album-page__content--item--fakeDiv">
-                                        <div class="album-page__content--item-number"> <span>1</span>
-                                            <div class="album-page__content--item-number--backdrop">
-                                                <input type="checkbox" name="" value="">
-                                            </div>
-                                        </div>
-                                        <div class="album-page__content--item-song">
-                                            <div class="album-page__content--item-song--img">
-                                                <img src="https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/2/2/e/6/22e64f95064e3a06f0f15091cacad02c.jpg"
-                                                    alt="">
-                                                <div class="album-page__content--item-song--img--cover">
-                                                    <i class="fa-solid fa-play"></i>
-                                                </div>
-                                            </div>
-                                            <div class="album-page__content--item-song--title">
-                                                <span>Stay (Prod. DAUL)</span>
-                                                <span><a href="">Evy</a></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="album-page__content--item-timeOut">
-                                        <span>02:23</span>
-                                        <div class="album-page__content--item-timeOut--backdrop">
-                                            <button><i class="fa-regular fa-heart"></i></button>
-                                            <button>
-                                                <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="album-page__content--card">
-                                <div class="album-page__content--item">
-                                    <div class="album-page__content--item--fakeDiv">
-                                        <div class="album-page__content--item-number"><span>2</span>
-                                            <div class="album-page__content--item-number--backdrop">
-                                                <input type="checkbox" name="" value="">
-                                            </div>
-                                        </div>
-
-                                        <div class="album-page__content--item-song">
-                                            <div class="album-page__content--item-song--img">
-                                                <img src="https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/2/2/e/6/22e64f95064e3a06f0f15091cacad02c.jpg"
-                                                    alt="">
-                                                <div class="album-page__content--item-song--img--cover">
-                                                    <i class="fa-solid fa-play"></i>
-                                                </div>
-                                            </div>
-                                            <div class="album-page__content--item-song--title">
-                                                <span>Do You Right</span>
-                                                <span><a href="">Evy</a> , <a href="">Negav</a></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="album-page__content--item-timeOut"><span>02:23</span>
-                                        <div class="album-page__content--item-timeOut--backdrop">
-                                            <button><i class="fa-regular fa-heart"></i></button>
-                                            <button>
-                                                <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="album-page__content--card">
-                                <div class="album-page__content--item">
-                                    <div class="album-page__content--item--fakeDiv">
-                                        <div class="album-page__content--item-number"><span>3</span>
-                                            <div class="album-page__content--item-number--backdrop">
-                                                <input type="checkbox" name="" value="">
-                                            </div>
-                                        </div>
-                                        <div class="album-page__content--item-song">
-                                            <div class="album-page__content--item-song--img">
-                                                <img src="https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/2/2/e/6/22e64f95064e3a06f0f15091cacad02c.jpg"
-                                                    alt="">
-                                                <div class="album-page__content--item-song--img--cover">
-                                                    <i class="fa-solid fa-play"></i>
-                                                </div>
-                                            </div>
-                                            <div class="album-page__content--item-song--title">
-                                                <span>Stuck</span>
-                                                <span><a href="">Evy</a></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="album-page__content--item-timeOut"><span>02:23</span>
-                                        <div class="album-page__content--item-timeOut--backdrop">
-                                            <button><i class="fa-regular fa-heart"></i></button>
-                                            <button>
-                                                <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
+                            <c:forEach items="${album.songs}" var="song">
+	                            <div class="album-page__content--card">
+	                                <div class="album-page__content--item">
+	                                    <div class="album-page__content--item--fakeDiv">
+	                                        <div class="album-page__content--item-number">
+	                                            <div class="album-page__content--item-number--backdrop">
+	                                                <input type="checkbox" name="" value="">
+	                                            </div>
+	                                        </div>
+	                                        <div class="album-page__content--item-song">
+	                                            <div class="album-page__content--item-song--img">
+	                                                <img src="${song.imageUrl}"
+	                                                    alt="">
+	                                                <div class="album-page__content--item-song--img--cover">
+	                                                    <i class="fa-solid fa-play"></i>
+	                                                </div>
+	                                            </div>
+	                                            <div class="album-page__content--item-song--title">
+	                                                <span>${song.name}</span>
+	                                                <span>${song.type}</span>
+	                                            </div>
+	                                        </div>
+	                                    </div>
+	                                    <div class="album-page__content--item-timeOut">
+	                                        <span>02:23</span>
+	                                        <div class="album-page__content--item-timeOut--backdrop">
+	                                            <button><i class="fa-regular fa-heart"></i></button>
+	                                            <button>
+	                                                <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+	                                            </button>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                            </div>
+							</c:forEach>
                         </div>
                         <div class="album-page__content--footer">
                             2 bài hát <i class="fa-solid fa-circle"></i> 5 phút

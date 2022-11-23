@@ -383,7 +383,8 @@ button {
   margin: 0;
 }
 
-.admin-page__error{
+.admin-page__album-error,
+.admin-page__singer-error{
     width: fit-content;
     height: fit-content;
     display: flex;
@@ -397,9 +398,28 @@ button {
 	padding: 0px 10px;
 }
 
-.admin-page__error span {
+.admin-page__album-error span,
+.admin-page__singer-error span {
 	min-height: 40px;
 	line-height: 40px;
+}
+
+.admin-page__input-label {
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 20px;
+	color: #fff;
+}
+
+.admin-page__input-label label {
+	min-width: 100px;
+}
+
+.ui-selectmenu-button.ui-button {
+    max-width: 226px;
+    margin: 0;
 }
 
 .admin-page__favorite-song {
@@ -932,6 +952,18 @@ html .ui-button.ui-state-disabled:active {
 
 .ui-tabs .ui-tabs-panel {
   padding: 0;
+}
+
+.ui-selectmenu-button.ui-button {
+	width: 346px;
+}
+
+.ui-selectmenu-button.ui-button:hover,
+.ui-selectmenu-button.ui-button:focus {
+	border: none;
+	background: #fff;
+	color: black;
+	font-weight: initial;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -1,6 +1,10 @@
 package hibernate.DAO;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+
+import javax.persistence.TypedQuery;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -10,6 +14,8 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import hibernate.entities.Album;
+import hibernate.entities.Singer;
+import hibernate.entities.Song;
 
 @Repository
 public class AlbumDAOImpl implements AlbumDAO {
@@ -44,5 +50,25 @@ public class AlbumDAOImpl implements AlbumDAO {
 			return false;
 		}		
 	}
-	
+
+	@Override
+	@Transactional
+	public Album getAlbumSongList(String id) {
+		Session currentSession = sessionFactory.getCurrentSession();
+		Album album = (Album) currentSession
+				.createQuery( "Select new Album(a.id, a.name, a.description, a.imageUrl) from Album a where a.id = ?1")
+				.setParameter(1, id)
+				.getSingleResult();
+		
+		List<Song> songs = (List<Song>) currentSession
+				.createQuery("Select new Song(s.id, s.name, s.country, s.type, s.imageUrl, s.source) from Song s where s.albumId = ?1")
+				.setParameter(1, id)
+				.getResultList();
+		System.out.println("songs = " + songs);
+		
+		album.setSongs(songs);
+		System.out.println("albumRs = " + album);
+
+		return album;
+	}
 }

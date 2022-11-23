@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; ; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -66,8 +67,8 @@
             <h2>Mới Phát Hành</h2>
             <div class="homepage__trending--button">
               <div class="homepage__trending--cover">
-                <button><a href="">Bài hát</a></button>
-                <button><a href="">Album</a></button>
+                <button><a href="#">Bài hát</a></button>
+                <button><a href="#">Album</a></button>
               </div>
               <div class="homepage__trending--all">
                 Tất cả
@@ -75,252 +76,40 @@
               </div>
             </div>
             <div class="homepage__trending--content">
-              <div class="homepage__trending--col">
-                <div class="homepage__trending--card">
-                  <div class="homepage__trending--cover">
-                    <div class="homepage__trending--img">
-                      <img
-                        src="https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/f/9/e/f/f9ef324b4c6309f00e47b126ab12db52.jpg"
-                        alt=""
-                        />
-                    </div>
-                    <div class="homepage__trending--title">
-                      <h4>HUNGOVER (feat. Vũ Cát Tường)</h4>
-                      <span>Minh, Vũ Cát Tường</span>
-                      <span>2 ngày trước</span>
-                    </div>
-                  </div>
-                  <div class="homepage__trending--icon">
-                    <i class="fa fa-play" aria-hidden="true"></i>
-                    <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                  </div>
-                </div>
-                <div class="homepage__trending--card">
-                  <div class="homepage__trending--cover">
-                    <div class="homepage__trending--img">
-                      <img
-                        src="https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/0/8/9/7/0897d0b058f77ad7b5b4d573646afe91.jpg"
-                        alt=""
-                        />
-                    </div>
-                    <div class="homepage__trending--title">
-                      <h4>Lời Nói Dối Sau Cùng</h4>
-                      <span>Vicky Nhung</span>
-                      <span>4 giờ trước</span>
-                    </div>
-                  </div>
-                  <div class="homepage__trending--icon">
-                    <i class="fa fa-play" aria-hidden="true"></i>
-                    <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                  </div>
-                </div>
-                <div class="homepage__trending--card">
-                  <div class="homepage__trending--cover">
-                    <div class="homepage__trending--img">
-                      <img
-                        src="https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/9/4/b/3/94b3b13db60e0392b193140154c8dc87.jpg"
-                        alt=""
-                        />
-                    </div>
-                    <div class="homepage__trending--title">
-                      <h4>Anh ơi ở lại</h4>
-                      <span>Thảo Trang</span>
-                      <span>1 ngày trước</span>
-                    </div>
-                  </div>
-                  <div class="homepage__trending--icon">
-                    <i class="fa fa-play" aria-hidden="true"></i>
-                    <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                  </div>
-                </div>
-                <div class="homepage__trending--card">
-                  <div class="homepage__trending--cover">
-                    <div class="homepage__trending--img">
-                      <img
-                        src="https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/9/7/3/6/973605e63de706dee36cde24652670f5.jpg"
-                        alt=""
-                        />
-                    </div>
-                    <div class="homepage__trending--title">
-                      <h4>Ghép môi</h4>
-                      <span>OSAD</span>
-                      <span>5 giờ trước</span>
-                    </div>
-                  </div>
-                  <div class="homepage__trending--icon">
-                    <i class="fa fa-play" aria-hidden="true"></i>
-                    <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                  </div>
-                </div>
-              </div>
-              <div class="homepage__trending--col">
-                <div class="homepage__trending--card">
-                  <div class="homepage__trending--cover">
-                    <div class="homepage__trending--img">
-                      <img
-                        src="https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/2/d/f/9/2df9160352308dd28caedb80406b678d.jpg"
-                        alt=""
-                        />
-                    </div>
-                    <div class="homepage__trending--title">
-                      <h4>Miss Showbiz</h4>
-                      <span>Chi Pu</span>
-                      <span>1 ngày trước</span>
-                    </div>
-                  </div>
-                  <div class="homepage__trending--icon">
-                    <i class="fa fa-play" aria-hidden="true"></i>
-                    <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                  </div>
-                </div>
-                <div class="homepage__trending--card">
-                  <div class="homepage__trending--cover">
-                    <div class="homepage__trending--img">
-                      <img
-                        src="https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/9/6/2/7/9627195ff71c955c95856d2560af7a0a.jpg"
-                        alt=""
-                        />
-                    </div>
-                    <div class="homepage__trending--title">
-                      <h4>don't you say goodbye</h4>
-                      <span>Vũ Thanh Vân, Minh Đinh</span>
-                      <span>1 ngày trước</span>
-                    </div>
-                  </div>
-                  <div class="homepage__trending--icon">
-                    <i class="fa fa-play" aria-hidden="true"></i>
-                    <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                  </div>
-                </div>
-                <div class="homepage__trending--card">
-                  <div class="homepage__trending--cover">
-                    <div class="homepage__trending--img">
-                      <img
-                        src="https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/6/0/3/1/6031af10dfe56b1701d96477c8f4f4d0.jpg"
-                        alt=""
-                        />
-                    </div>
-                    <div class="homepage__trending--title">
-                      <h4>Một Chút Thôi</h4>
-                      <span>B Ray, Helia</span>
-                      <span>1 ngày trước</span>
-                    </div>
-                  </div>
-                  <div class="homepage__trending--icon">
-                    <i class="fa fa-play" aria-hidden="true"></i>
-                    <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                  </div>
-                </div>
-                <div class="homepage__trending--card">
-                  <div class="homepage__trending--cover">
-                    <div class="homepage__trending--img">
-                      <img
-                        src="https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/6/1/d/6/61d669e601432fedd5030594c4c5eb45.jpg"
-                        alt=""
-                        />
-                    </div>
-                    <div class="homepage__trending--title">
-                      <h4>don't wanna be your friend</h4>
-                      <span>Joan</span>
-                      <span>1 ngày trước</span>
-                    </div>
-                  </div>
-                  <div class="homepage__trending--icon">
-                    <i class="fa fa-play" aria-hidden="true"></i>
-                    <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                  </div>
-                </div>
-              </div>
-              <div class="homepage__trending--col">
-                <div class="homepage__trending--card">
-                  <div class="homepage__trending--cover">
-                    <div class="homepage__trending--img">
-                      <img
-                        src="https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/1/3/7/6/1376b7c7cd8557355419a3f158e2be10.jpg"
-                        alt=""
-                        />
-                    </div>
-                    <div class="homepage__trending--title">
-                      <h4>Replay trên con Guây</h4>
-                      <span>Phúc Du, Đan Ni</span>
-                      <span>3 ngày trước</span>
-                    </div>
-                  </div>
-                  <div class="homepage__trending--icon">
-                    <i class="fa fa-play" aria-hidden="true"></i>
-                    <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                  </div>
-                </div>
-                <div class="homepage__trending--card">
-                  <div class="homepage__trending--cover">
-                    <div class="homepage__trending--img">
-                      <img
-                        src="https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/7/b/d/e/7bde9ab0c8434e2e3328763e4df5bac3.jpg"
-                        alt=""
-                        />
-                    </div>
-                    <div class="homepage__trending--title">
-                      <h4>năm ngoái giờ này (after all)</h4>
-                      <span>Phùng Khánh Linh</span>
-                      <span>1 ngày trước</span>
-                    </div>
-                  </div>
-                  <div class="homepage__trending--icon">
-                    <i class="fa fa-play" aria-hidden="true"></i>
-                    <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                  </div>
-                </div>
-                <div class="homepage__trending--card">
-                  <div class="homepage__trending--cover">
-                    <div class="homepage__trending--img">
-                      <img
-                        src="https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/2/f/1/d/2f1dcbcb0fb3f504ae6f2b06b737f249.jpg"
-                        alt=""
-                        />
-                    </div>
-                    <div class="homepage__trending--title">
-                      <h4>Xem Như Em Chẳng May</h4>
-                      <span>Lương Bích Hữu</span>
-                      <span>1 ngày trước</span>
-                    </div>
-                  </div>
-                  <div class="homepage__trending--icon">
-                    <i class="fa fa-play" aria-hidden="true"></i>
-                    <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                  </div>
-                </div>
-                <div class="homepage__trending--card">
-                  <div class="homepage__trending--cover">
-                    <div class="homepage__trending--img">
-                      <img
-                        src="https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/f/9/3/6/f9360c2bdeda71de995b626df73121fc.jpg"
-                        alt=""
-                        />
-                    </div>
-                    <div class="homepage__trending--title">
-                      <h4>Thói Quen</h4>
-                      <span>Wren Evans, Evy</span>
-                      <span>1 ngày trước</span>
-                    </div>
-                  </div>
-                  <div class="homepage__trending--icon">
-                    <i class="fa fa-play" aria-hidden="true"></i>
-                    <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                  </div>
-                </div>
-              </div>
+            	<c:forEach items="${songList}" var="song">
+	                <div class="homepage__trending--card">
+	                  <div class="homepage__trending--cover">
+	                    <div class="homepage__trending--img">
+	                      <img
+	                        src="${song.imageUrl }"
+	                        alt=""
+	                        />
+	                    </div>
+	                    <div class="homepage__trending--title">
+	                      <h4>${song.name }</h4>
+	                      <span>${song.singer.name }</span>
+	                      <span>${song.album.name }</span>
+	                    </div>
+	                  </div>
+	                  <div class="homepage__trending--icon">
+	                    <i class="fa fa-play" aria-hidden="true"></i>
+	                    <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+	                  </div>
+	                </div>
+                </c:forEach>
             </div>
           </div>
           <div class="homepage__weekend">
             <h2>Cuối Tuần Thư Thả</h2>
             <div class="homepage__weekend--row">
-              <a id="link" href="${pageContext.request.contextPath}/album/">
+            <c:forEach items="${albumList}" var="album">
+              <a id="link" href="${pageContext.request.contextPath}/album/${album.id}">
                 <div class="homepage__weekend--card">
                   <div class="homepage__weekend--cover">
                     <div class="homepage__weekend--img">
                       <img
-                        src="https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/e/0/b/3/e0b342e71042562c08ba1ce70fbeba0e.jpg"
-                        alt=""
+                        src="${album.imageUrl }"
+                        alt="${album.name }"
                         />
                     </div>
                     <div class="homepage__weekend--cover-backdrop">
@@ -332,183 +121,11 @@
                     </div>
                   </div>
                   <div class="homepage__weekend--icon"></div>
-                  <h4>Nhạc Cho Chủ Nhật</h4>
-                  <span>Chủ nhật chìm đắm trong những giai điệu Lo-Fi Việt</span>
-                </div></a>
-              <div class="homepage__weekend--card">
-                <div class="homepage__weekend--cover">
-                  <div class="homepage__weekend--img">
-                    <img
-                      src="https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/f/0/5/c/f05c599832086a0a60f1105db362619f.jpg"
-                      alt=""
-                      />
-                  </div>
-                  <div class="homepage__weekend--cover-backdrop">
-                    <button><i class="fa-regular fa-heart"></i></button>
-                    <button><i class="fa-regular fa-circle-play"></i></button>
-                    <button>
-                      <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                    </button>
-                  </div>
+                  <h4>${album.name }</h4>
+                  <span>${album.description }</span>
                 </div>
-                <h4>Nhạc Trẻ Gây Nghiện</h4>
-                <span>Giai điệu nghe một lần là không thể quên của V-Pop</span>
-              </div>
-              <div class="homepage__weekend--card">
-                <div class="homepage__weekend--cover">
-                  <div class="homepage__weekend--img">
-                    <img
-                      src="https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/c/a/4/5/ca4547dd0e474e034adcefcd94f93dea.jpg"
-                      alt=""
-                      />
-                  </div>
-                  <div class="homepage__weekend--cover-backdrop">
-                    <button><i class="fa-regular fa-heart"></i></button>
-                    <button><i class="fa-regular fa-circle-play"></i></button>
-                    <button>
-                      <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                    </button>
-                  </div>
-                </div>
-                <h4>Pop Right Now</h4>
-                <span>Giai điệu Pop thời thượng mà bạn k thể bỏ lỡ</span>
-              </div>
-              <div class="homepage__weekend--card">
-                <div class="homepage__weekend--cover">
-                  <div class="homepage__weekend--img">
-                    <img
-                      src="https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/7/c/2/c/7c2cb90cf0a23a24224dc99f8f9732da.jpg"
-                      alt=""
-                      />
-                  </div>
-                  <div class="homepage__weekend--cover-backdrop">
-                    <button><i class="fa-regular fa-heart"></i></button>
-                    <button><i class="fa-regular fa-circle-play"></i></button>
-                    <button>
-                      <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                    </button>
-                  </div>
-                </div>
-                <h4>Quý Cô Indie Việt</h4>
-                <span>Bóng hồng đa zi năng của làng Indie Việt</span>
-              </div>
-              <div class="homepage__weekend--card">
-                <div class="homepage__weekend--cover">
-                  <div class="homepage__weekend--img">
-                    <img
-                      src="https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/a/2/e/0/a2e004cb8d3a0a22bae7d00ab1e8d90e.jpg"
-                      alt=""
-                      />
-                  </div>
-                  <div class="homepage__weekend--cover-backdrop">
-                    <button><i class="fa-regular fa-heart"></i></button>
-                    <button><i class="fa-regular fa-circle-play"></i></button>
-                    <button>
-                      <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                    </button>
-                  </div>
-                </div>
-                <h4>Thả Sad Vào Rap</h4>
-                <span>Ở đây có B ray và những track Rap sad!</span>
-              </div>
-              <div class="homepage__weekend--card">
-                <div class="homepage__weekend--cover">
-                  <div class="homepage__weekend--img">
-                    <img
-                      src="https://photo-resize-zmp3.zmdcdn.me/w480_r1x1_jpeg/cover/8/e/9/d/8e9d5b3f492b0a91f7c0879183c6f89f.jpg"
-                      alt=""
-                      />
-                  </div>
-                  <div class="homepage__weekend--cover-backdrop">
-                    <button><i class="fa-regular fa-heart"></i></button>
-                    <button><i class="fa-regular fa-circle-play"></i></button>
-                    <button>
-                      <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                    </button>
-                  </div>
-                </div>
-                <div class="homepage__weekend--icon"></div>
-                <h4>Nhạc Cho Chủ Nhật</h4>
-                <span>Chủ nhật chìm đắm trong những giai điệu Lo-Fi Việt</span>
-              </div>
-              <div class="homepage__weekend--card">
-                <div class="homepage__weekend--cover">
-                  <div class="homepage__weekend--img">
-                    <img
-                      src="https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/9/8/1/7/981794e270b6d24f777c8d50db46ded0.jpg"
-                      alt=""
-                      />
-                  </div>
-                  <div class="homepage__weekend--cover-backdrop">
-                    <button><i class="fa-regular fa-heart"></i></button>
-                    <button><i class="fa-regular fa-circle-play"></i></button>
-                    <button>
-                      <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                    </button>
-                  </div>
-                </div>
-                <h4>Nhạc Cho Chủ Nhật</h4>
-                <span>Chủ nhật chìm đắm trong những giai điệu Lo-Fi Việt</span>
-              </div>
-              <div class="homepage__weekend--card">
-                <div class="homepage__weekend--cover">
-                  <div class="homepage__weekend--img">
-                    <img
-                      src="https://photo-resize-zmp3.zmdcdn.me/w480_r1x1_jpeg/cover/9/b/d/1/9bd1141b40655b09e7f01c8976b88405.jpg"
-                      alt=""
-                      />
-                  </div>
-                  <div class="homepage__weekend--cover-backdrop">
-                    <button><i class="fa-regular fa-heart"></i></button>
-                    <button><i class="fa-regular fa-circle-play"></i></button>
-                    <button>
-                      <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                    </button>
-                  </div>
-                </div>
-                <h4>Nhạc Cho Chủ Nhật</h4>
-                <span>Chủ nhật chìm đắm trong những giai điệu Lo-Fi Việt Chủ
-                  nhật
-                  chìm đắm trong những giai điệu Lo-Fi Việt</span>
-              </div>
-              <div class="homepage__weekend--card">
-                <div class="homepage__weekend--cover">
-                  <div class="homepage__weekend--img">
-                    <img
-                      src="https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/d/d/a/f/ddaf5764e9f5a67f34a6f0438b92ef4b.jpg"
-                      alt=""
-                      />
-                  </div>
-                  <div class="homepage__weekend--cover-backdrop">
-                    <button><i class="fa-regular fa-heart"></i></button>
-                    <button><i class="fa-regular fa-circle-play"></i></button>
-                    <button>
-                      <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                    </button>
-                  </div>
-                </div>
-                <h4>Nhạc Cho Chủ Nhật</h4>
-                <span>Chủ nhật chìm đắm trong những giai điệu Lo-Fi Việt</span>
-              </div>
-              <div class="homepage__weekend--card">
-                <div class="homepage__weekend--cover">
-                  <div class="homepage__weekend--img">
-                    <img
-                      src="https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/8/0/9/f/809f46cf22d6d0b36bbf45f6344a82e7.jpg"
-                      alt=""
-                      />
-                  </div>
-                  <div class="homepage__weekend--cover-backdrop">
-                    <button><i class="fa-regular fa-heart"></i></button>
-                    <button><i class="fa-regular fa-circle-play"></i></button>
-                    <button>
-                      <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                    </button>
-                  </div>
-                </div>
-                <h4>Nhạc Cho Chủ Nhật</h4>
-                <span>Chủ nhật chìm đắm trong những giai điệu Lo-Fi Việt</span>
-              </div>
+               </a>
+             </c:forEach>
             </div>
           </div>
           <div class="homepage__new">

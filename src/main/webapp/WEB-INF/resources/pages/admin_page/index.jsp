@@ -53,214 +53,105 @@
                                                 <h4>THỜI GIAN</h4>
                                             </div>
                                         </div>
-                                        <div class="admin-page__favorite-song--item">
-                                            <div class="admin-page__favorite-song--template">
-                                                <div class="admin-page__favorite-song--number">
-                                                    <span><i class="fa-solid fa-music"></i></span>
-                                                    <div class="admin-page__favorite-song--backdrop">
-                                                        <input type="checkbox" name="" value="" />
-                                                    </div>
-                                                </div>
-                                                <div class="admin-page__favorite-song--song">
-                                                    <div class="admin-page__favorite-song--img">
-                                                        <img src="https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/2/2/e/6/22e64f95064e3a06f0f15091cacad02c.jpg"
-                                                            alt="" />
-                                                        <div class="admin-page__favorite-song--cover">
-                                                            <i class="fa-solid fa-play"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="admin-page__favorite-song--title">
-                                                        <span>Stay (Prod.
-                                                            DAUL)</span>
-                                                        <span><a href="">Evy</a></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="admin-page__favorite-song--album">
-                                                <span><a href="">Xuân Hạ Thu Đông,
-                                                        rồi lại Xuân - Tập
-                                                        3+4</a></span>
-                                            </div>
-                                            <div class="admin-page__favorite-song--time-out">
-                                                <button>
-                                                    <i class="fa-solid fa-trash"></i>
-                                                </button>
-                                                <span>02:23</span>
-                                                <div class="admin-page__favorite-song--time-out-backdrop">
-                                                    <button>
-                                                        <i class="fa-solid fa-photo-film"></i>
-                                                    </button>
-                                                    <button>
-                                                        <i class="fa-solid fa-microphone"></i>
-                                                    </button>
-                                                    <button>
-                                                        <i class="fa-solid fa-heart"></i>
-                                                    </button>
-                                                    <button>
-                                                        <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="admin-page__favorite-song--item">
-                                            <div class="admin-page__favorite-song--template">
-                                                <div class="admin-page__favorite-song--number">
-                                                    <span><i class="fa-solid fa-music"></i></span>
-                                                    <div class="admin-page__favorite-song--backdrop">
-                                                        <input type="checkbox" name="" value="" />
-                                                    </div>
-                                                </div>
-                                                <div class="admin-page__favorite-song--song">
-                                                    <div class="admin-page__favorite-song--img">
-                                                        <img src="https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/0/5/6/6/056652306efa257560bcf64b30f756a3.jpg"
-                                                            alt="" />
-                                                        <div class="admin-page__favorite-song--cover">
-                                                            <i class="fa-solid fa-play"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="admin-page__favorite-song--title">
-                                                        <span>Hôm nay em cưới
-                                                            rồi</span>
-                                                        <span><a href="">Khải
-                                                                Đăng</a></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="admin-page__favorite-song--album">
-                                                <span><a href="">Hôm nay em cưới rồi
-                                                        (Single)</a></span>
-                                            </div>
-                                            <div class="admin-page__favorite-song--time-out">
-                                                <button>
-                                                    <i class="fa-solid fa-trash"></i>
-                                                </button>
-                                                <span>02:23</span>
-                                                <div class="admin-page__favorite-song--time-out-backdrop">
-                                                    <button>
-                                                        <i class="fa-solid fa-photo-film"></i>
-                                                    </button>
-                                                    <button>
-                                                        <i class="fa-solid fa-microphone"></i>
-                                                    </button>
-                                                    <button>
-                                                        <i class="fa-solid fa-heart"></i>
-                                                    </button>
-                                                    <button>
-                                                        <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="admin-page__favorite-song--item">
-                                            <div class="admin-page__favorite-song--template">
-                                                <div class="admin-page__favorite-song--number">
-                                                    <span><i class="fa-solid fa-music"></i></span>
-                                                    <div class="admin-page__favorite-song--backdrop">
-                                                        <input type="checkbox" name="" value="" />
-                                                    </div>
-                                                </div>
-                                                <div class="admin-page__favorite-song--song">
-                                                    <div class="admin-page__favorite-song--img">
-                                                        <img src="https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/0/7/1/4/0714c3f88d82f5c1bd4cbdd779ba1720.jpg"
-                                                            alt="" />
-                                                        <div class="admin-page__favorite-song--cover">
-                                                            <i class="fa-solid fa-play"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="admin-page__favorite-song--title">
-                                                        <span>Đánh Mất Em (Lofi Version)</span>
-                                                        <span>
-	                                                        <a href="">Quang Đăng Trần</a>
-	                                                        <a href="">Freak D</a>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="admin-page__favorite-song--album">
-                                                <span><a href="">Đánh Mất Em (Lofi
-                                                        Version) (Single)</a></span>
-                                            </div>
-                                            <div class="admin-page__favorite-song--time-out">
-                                                <button>
-                                                    <i class="fa-solid fa-trash"></i>
-                                                </button>
-                                                <span>02:23</span>
-                                                <div class="admin-page__favorite-song--time-out-backdrop">
-                                                    <button>
-                                                        <i class="fa-solid fa-photo-film"></i>
-                                                    </button>
-                                                    <button>
-                                                        <i class="fa-solid fa-microphone"></i>
-                                                    </button>
-                                                    <button>
-                                                        <i class="fa-solid fa-heart"></i>
-                                                    </button>
-                                                    <button>
-                                                        <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="admin-page__favorite-song--item">
-                                            <div class="admin-page__favorite-song--template">
-                                                <div class="admin-page__favorite-song--number">
-                                                    <span><i class="fa-solid fa-music"></i></span>
-                                                    <div class="admin-page__favorite-song--backdrop">
-                                                        <input type="checkbox" name="" value="" />
-                                                    </div>
-                                                </div>
-                                                <div class="admin-page__favorite-song--song">
-                                                    <div class="admin-page__favorite-song--img">
-                                                        <img src="https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/3/2/a/3/32a35f4d26ee56366397c09953f6c269.jpg"
-                                                            alt="" />
-                                                        <div class="admin-page__favorite-song--cover">
-                                                            <i class="fa-solid fa-play"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="admin-page__favorite-song--title">
-                                                        <span>Tất Cả Sẽ Thay
-                                                            Anh</span>
-                                                        <span><a href="">Tăng
-                                                                Phúc</a></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="admin-page__favorite-song--album">
-                                                <span><a href=""></a></span>
-                                            </div>
-                                            <div class="admin-page__favorite-song--time-out">
-                                                <button>
-                                                    <i class="fa-solid fa-trash"></i>
-                                                </button>
-                                                <span>02:23</span>
-                                                <div class="admin-page__favorite-song--time-out-backdrop">
-                                                    <button>
-                                                        <i class="fa-solid fa-photo-film"></i>
-                                                    </button>
-                                                    <button>
-                                                        <i class="fa-solid fa-microphone"></i>
-                                                    </button>
-                                                    <button>
-                                                        <i class="fa-solid fa-heart"></i>
-                                                    </button>
-                                                    <button>
-                                                        <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <c:forEach items="${songList}" var="song">
+	                                        <div class="admin-page__favorite-song--item">
+	                                            <div class="admin-page__favorite-song--template">
+	                                                <div class="admin-page__favorite-song--number">
+	                                                    <span><i class="fa-solid fa-music"></i></span>
+	                                                    <div class="admin-page__favorite-song--backdrop">
+	                                                        <input type="checkbox" name="" value="" />
+	                                                    </div>
+	                                                </div>
+	                                                <div class="admin-page__favorite-song--song">
+	                                                    <div class="admin-page__favorite-song--img">
+	                                                        <img src="${song.imageUrl}" alt="${song.name}"/>
+	                                                        <div class="admin-page__favorite-song--cover">
+	                                                            <i class="fa-solid fa-play"></i>
+	                                                        </div>
+	                                                    </div>
+	                                                    <div class="admin-page__favorite-song--title">
+	                                                        <span><c:out value="${song.name}"></c:out></span>
+	                                                        <span><a href=""><c:out value="${song.singer.name}"></c:out></a></span>
+	                                                    </div>
+	                                                </div>
+	                                            </div>
+	                                            <div class="admin-page__favorite-song--album">
+	                                                <span><a href="#"><c:out value="${song.album.name}"></c:out></a></span>
+	                                            </div>
+	                                            <div class="admin-page__favorite-song--time-out">
+	                                                <button>
+	                                                    <i class="fa-solid fa-pen"></i>
+	                                                </button>
+                                                    <a href="${pageContext.request.contextPath}/admin/delete-song?id=${song.id}">
+		                                                <button>
+		                                                    	<i class="fa-solid fa-trash"></i>
+		                                                </button>
+                                                    </a>
+	                                            </div>
+	                                        </div>
+										</c:forEach>
                                     </div>
                                 </div>
                                 <div id="tabsChild-2">
                                     <div>
-                                        <form action="" class="admin-page__form-inputs">
-                                            <input type="text" placeholder="Tên bài hát" />
-                                            <input type="text" placeholder="Tên ca sĩ" />
-                                            <input type="file" name="image" />
+                                        <form:form
+	                                        action="${pageContext.request.contextPath}/admin/create-song" 
+	                                        class="admin-page__form-inputs" 
+	                                        method="POST"
+	                                        enctype="multipart/form-data"
+	                                        modelAttribute="song"
+	                                    >
+	                                    	<div class="admin-page__input-label">
+                                            	<label>Tên bài hát: </label>
+                                           	 <form:input type="text" placeholder="Tên bài hát" path="name"/>
+	                                    	</div>
+                                            <div class="admin-page__input-label">
+                                            	<label>Khu vực: </label>
+	                                            <form:select path="country" id="song_country">
+						                            <form:option value="Việt Nam">Việt Nam</form:option>
+						                            <form:option value="Nhật Bản">Nhật Bản</form:option>
+						                            <form:option value="Hàn Quốc">Hàn Quốc</form:option>
+						                            <form:option value="US-UK">US-UK</form:option>
+							                    </form:select>
+                                            </div>
+                                            <div class="admin-page__input-label">
+                                            	<label>Dạng nhạc: </label>
+	                                            <form:select path="type" id="song_type">
+						                            <form:option value="MV">MV</form:option>
+						                            <form:option value="Bài hát">Bài hát</form:option>
+						                            <form:option value="Trailer">Trailer</form:option>
+							                    </form:select>
+                                            </div>
+                                            <div class="admin-page__input-label">
+                                            	<label>Album: </label>
+	                                            <select name="albumId" id="song_album">
+						                            <option value=""></option>
+							                        <c:forEach items="${albumList}" var="album">
+							                            <option value="${album.id}">${album.name}</option>
+							                        </c:forEach>
+							                    </select>
+                                            </div>
+                                            <div class="admin-page__input-label">
+                                            	<label>Ca sĩ: </label>
+	                                            <select name="singerId" id="song_singer">
+						                            <option value=""></option>
+							                        <c:forEach items="${singerList}" var="singer">
+							                            <option value="${singer.id}">${singer.name}</option>
+							                        </c:forEach>
+							                    </select>
+                                            </div>
+                                            <div class="admin-page__input-label">
+                                            	<label>File ảnh: </label>
+                                            	<input type="file" name="imageFile" path="imageFile"/>
+                                            </div>
+                                            <div class="admin-page__input-label">
+                                            	<label>File nhạc: </label>
+                                            <input type="file" accept="audio/mp3" name="sourceFile" path="sourceFile"/>
+                                            </div>
                                             <button type="submit">
                                                 Tạo mới
                                             </button>
-                                        </form>
+                                        </form:form>
                                     </div>
                                 </div>
                             </div>
@@ -278,7 +169,7 @@
                                     </li>
                                 </ul>
                                 <div id="tabsChild-1">
-							  		<%= "<div class='admin-page__error'><span>" + request.getParameter("albumErrorMsg") + "<span></div>" %>
+							  		<%= "<div class='admin-page__album-error'><span>" + request.getParameter("albumErrorMsg") + "<span></div>" %>
                                     <div class="admin-page__favorite-song--table">
                                         <div class="admin-page__favorite-song--col-name">
                                             <h4>TÊN ALBUM</h4>
@@ -287,9 +178,8 @@
                                                 <h4>THAO TÁC</h4>
                                             </div>
                                         </div>
-                                        
                                         <c:forEach items="${albumList}" var="album">
-                                        <div class="admin-page__favorite-song--item">
+	                                        <div class="admin-page__favorite-song--item">
 	                                            <div class="admin-page__favorite-song--template">
 	                                                <div class="admin-page__favorite-song--number">
 	                                                    <span><i class="fa-solid fa-music"></i></span>
@@ -323,7 +213,7 @@
 		                                                </button>
                                                     </a>
 	                                            </div>
-                                        </div>
+	                                        </div>
 										</c:forEach>
                                     </div>
                                 </div>
@@ -360,82 +250,70 @@
                                     </li>
                                 </ul>
                                 <div id="tabsChild-1">
+                                	<%= "<div class='admin-page__singer-error'><span>" + request.getParameter("singerErrorMsg") + "<span></div>" %>
                                     <div class="admin-page__favorite-song--table">
                                         <div class="admin-page__favorite-song--col-name">
                                             <h4>CA SĨ</h4>
                                             <div class="admin-page__favorite-song--col-name-cover">
-                                                <h4>MÔ TẢ</h4>
+                                                <h4>TIỂU SỬ</h4>
                                                 <h4>THAO TÁC</h4>
                                             </div>
                                         </div>
-                                        <div class="admin-page__favorite-song--item">
-                                            <div class="admin-page__favorite-song--template">
-                                                <div class="admin-page__favorite-song--number">
-                                                    <span><i class="fa-solid fa-music"></i></span>
-                                                    <div class="admin-page__favorite-song--backdrop">
-                                                        <input type="checkbox" name="" value="" />
-                                                    </div>
-                                                </div>
-                                                <div class="admin-page__favorite-song--song">
-                                                    <div class="admin-page__favorite-song--img">
-                                                        <img src="https://photo-resize-zmp3.zmdcdn.me/w94_r1x1_webp/cover/2/2/e/6/22e64f95064e3a06f0f15091cacad02c.jpg"
-                                                            alt="" />
-                                                        <div class="admin-page__favorite-song--cover">
-                                                            <i class="fa-solid fa-play"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="admin-page__favorite-song--title">
-                                                        <span>Phan Mạnh Quỳnh</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="admin-page__favorite-song--album">
-                                                <span>Lorem ipsum dolor sit,
-                                                    amet consectetur
-                                                    adipisicing elit. Eaque
-                                                    sit laudantium illum ab
-                                                    sint incidunt hic magni,
-                                                    id accusamus velit
-                                                    asperiores quas ullam?
-                                                    Beatae, id adipisci
-                                                    quibusdam suscipit eius
-                                                    veritatis.</span>
-                                            </div>
-                                            <div class="admin-page__favorite-song--time-out">
-                                                <button>
-                                                    <i class="fa-solid fa-pen"></i>
-                                                </button>
-                                                <button>
-                                                    <i class="fa-solid fa-trash"></i>
-                                                </button>
-                                                <div class="admin-page__favorite-song--time-out-backdrop">
-                                                    <button>
-                                                        <i class="fa-solid fa-photo-film"></i>
-                                                    </button>
-                                                    <button>
-                                                        <i class="fa-solid fa-microphone"></i>
-                                                    </button>
-                                                    <button>
-                                                        <i class="fa-solid fa-heart"></i>
-                                                    </button>
-                                                    <button>
-                                                        <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <c:forEach items="${singerList}" var="singer">
+	                                        <div class="admin-page__favorite-song--item">
+	                                            <div class="admin-page__favorite-song--template">
+	                                                <div class="admin-page__favorite-song--number">
+	                                                    <span><i class="fa-solid fa-music"></i></span>
+	                                                    <div class="admin-page__favorite-song--backdrop">
+	                                                        <input type="checkbox" name="" value="" />
+	                                                    </div>
+	                                                </div>
+	                                                <div class="admin-page__favorite-song--song">
+	                                                    <div class="admin-page__favorite-song--img">
+	                                                    	<img src="${singer.imageUrl}" alt="${singer.name}"/>
+	                                                        <div class="admin-page__favorite-song--cover">
+	                                                            <i class="fa-solid fa-play"></i>
+	                                                        </div>
+	                                                    </div>
+	                                                    <div class="admin-page__favorite-song--title">
+	                                                        <span> <c:out value="${singer.name}" /></span>
+	                                                        <span><a href=""><c:out value="${singer.name}" /></a></span>
+	                                                    </div>
+	                                                </div>
+	                                            </div>
+	                                            <div class="admin-page__favorite-song--album">
+	                                                <span><c:out value="${singer.story}" /></span>
+	                                            </div>
+	                                            <div class="admin-page__favorite-song--time-out">
+	                                                <button>
+	                                                    <i class="fa-solid fa-pen"></i>
+	                                                </button>
+                                                    <a href="${pageContext.request.contextPath}/admin/delete-singer?id=${singer.id}">
+		                                                <button>
+		                                                    	<i class="fa-solid fa-trash"></i>
+		                                                </button>
+                                                    </a>
+	                                            </div>
+	                                        </div>
+										</c:forEach>
                                     </div>
                                 </div>
                                 <div id="tabsChild-2">
                                     <div>
-                                        <form action="" class="admin-page__form-inputs">
-                                            <input type="text" placeholder="Tên ca sĩ" />
-                                            <input type="text" placeholder="Mô tả" />
-                                            <input type="file" name="image" />
+                                        <form:form
+	                                        action="${pageContext.request.contextPath}/admin/create-singer" 
+	                                        class="admin-page__form-inputs" 
+	                                        method="POST"
+	                                        enctype="multipart/form-data"
+	                                        modelAttribute="singer"
+	                                    >
+                                            <form:input type="text" placeholder="Tên ca sĩ" path="name"/>
+                                            <form:input type="text" placeholder="Mô tả của ca sĩ" path="story"/>
+                                            <input type="file" name="imageFile" path="imageFile"/>
                                             <button type="submit">
                                                 Tạo mới
                                             </button>
-                                        </form>
+                                        </form:form>
                                     </div>
                                 </div>
                             </div>
@@ -456,10 +334,13 @@
 	$(function () {
 	    $('#tabs, #tabs1, #tabs2, #tabs3').tabs();
 	});
-   if ($('.admin-page__error span').text() == 'null') {
-   		$('.admin-page__error').css("display", "none");
-   }
-
+   	if ($('.admin-page__album-error span').text() == 'null') {
+   		$('.admin-page__album-error').css("display", "none");
+   	}
+   	if ($('.admin-page__singer-error span').text() == 'null') {
+  		$('.admin-page__singer-error').css("display", "none");
+  	}
+   	$( "#song_country, #song_type, #song_album, #song_singer" ).selectmenu();
 </script>
 
 </html>

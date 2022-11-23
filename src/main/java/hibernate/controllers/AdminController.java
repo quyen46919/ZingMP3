@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import hibernate.entities.Album;
+import hibernate.entities.Singer;
+import hibernate.entities.Song;
 import hibernate.services.AdminService;
 import hibernate.utils.FileUploader;
 
@@ -30,18 +32,30 @@ public class AdminController {
 	@RequestMapping("/")
 	public String getAdminPage(
 			Model model,
-			@CookieValue(value = "email") String emailValue, 
-			@CookieValue(value = "role") String roleValue
+			@CookieValue(value = "email", required = false) String emailValue, 
+			@CookieValue(value = "role", required = false) String roleValue
 	) {
 		// get cookie and add to model
 		model.addAttribute("email", emailValue);
 		model.addAttribute("role", roleValue);
+		
+		// create models
 		Album album = new Album();
 		model.addAttribute("album", album);
+		Singer singer = new Singer();
+		model.addAttribute("singer", singer);
+		Song song = new Song();
+		model.addAttribute("song", song);
 		
 		// add data list
 		List<Album> albumList = adminService.getAlbumList();
 		model.addAttribute("albumList", albumList);
+		List<Singer> singerList = adminService.getSingerList();
+		model.addAttribute("singerList", singerList);
+		List<Song> songList = adminService.getSongList();
+		model.addAttribute("songList", songList);
+		
+		System.out.println("songList" + songList);
 		
 		return "/pages/admin_page/index";
 	}
@@ -68,6 +82,63 @@ public class AdminController {
 		boolean rs = adminService.deleteAlbum(id);
 		if (rs == false) {
 			model.addAttribute("albumErrorMsg", "Không thể xóa do đang có bài hát thuộc album này");
+		}
+		return "redirect:/admin/";
+	}
+	
+	@PostMapping("/create-singer")
+	public String createSinger(
+			@ModelAttribute("singer") Singer singer
+	) {
+		try {
+			FileUploader uploader = new FileUploader(singer.getImageFile());
+			String filePath = uploader.transfer();
+			singer.setImageFile(null);
+			singer.setImageUrl(filePath);
+			
+			adminService.createSinger(singer);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "redirect:/admin/";
+	}
+	
+	@GetMapping("/delete-singer")
+	public String deleteSinger(@RequestParam("id") String id, Model model) {
+		boolean rs = adminService.deleteSinger(id);
+		if (rs == false) {
+			model.addAttribute("singerErrorMsg", "Không thể xóa do có bài hát thuộc ca sĩ này");
+		}
+		return "redirect:/admin/";
+	}
+	
+	@PostMapping("/create-song")
+	public String createSong(
+			@ModelAttribute("song") Song song
+	) {
+		try {
+			FileUploader imageUploader = new FileUploader(song.getImageFile());
+			String filePath = imageUploader.transfer();
+			song.setImageFile(null);
+			song.setImageUrl(filePath);
+			
+			FileUploader sourceUploader = new FileUploader(song.getSourceFile());
+			String sourcePath = sourceUploader.transferAudio();
+			song.setSourceFile(null);
+			song.setSource(sourcePath);
+			
+			adminService.createSong(song);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "redirect:/admin/";
+	}
+	
+	@GetMapping("/delete-song")
+	public String deleteSong(@RequestParam("id") String id, Model model) {
+		boolean rs = adminService.deleteSong(id);
+		if (rs == false) {
+			model.addAttribute("singerErrorMsg", "Có lỗi xảy ra");
 		}
 		return "redirect:/admin/";
 	}
