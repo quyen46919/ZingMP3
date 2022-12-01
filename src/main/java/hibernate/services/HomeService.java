@@ -10,4 +10,7 @@ public interface HomeService {
 	public List<Album> getAlbumList();
 	public List<Singer> getSingerList();
 	public List<Song> getSongList();
+	public List<Singer> searchSinger(String searchText);
+	public List<Song> searchSong(String searchText);
+	public List<Album> searchAlbum(String searchText);
 }

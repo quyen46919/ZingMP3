@@ -201,7 +201,7 @@
 }
 
 .header form {
-	width: 100%;
+	margin: 0px!important;
 }
 
 .header input {
@@ -843,7 +843,11 @@ button {
 	visibility: inherit;
 }
 
-.album-page__content--item:hover .album-page__content--item-timeOut>span
+.album-page__content--item:hover .album-page__content--item-timeOut--backdrop a {
+	width: 30px;
+}
+
+.album-page__content--item:hover .album-page__content--item-timeOut > span
 	{
 	opacity: 0;
 	visibility: hidden;

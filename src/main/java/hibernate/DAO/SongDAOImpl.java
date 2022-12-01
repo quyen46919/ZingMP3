@@ -81,4 +81,14 @@ public class SongDAOImpl implements SongDAO{
 			return false;
 		}		
 	}
+	
+	@Override
+	public List<Song> searchSong(String searchText) {
+		Session currentSession = sessionFactory.getCurrentSession();
+		List<Song> songs = (List<Song>) currentSession
+			.createQuery("Select new Song(s.id, s.name, s.country, s.type, s.imageUrl, s.source) from Song s where s.name LIKE CONCAT('%', :searchText, '%')")
+			.setParameter("searchText", searchText)
+			.getResultList();
+		return songs;
+	}
 }

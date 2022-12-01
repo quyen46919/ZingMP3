@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import hibernate.entities.Singer;
+import hibernate.entities.Song;
 
 @Repository
 public class SingerDAOImpl implements SingerDAO{
@@ -41,5 +42,15 @@ public class SingerDAOImpl implements SingerDAO{
 			e.printStackTrace();
 			return false;
 		}		
+	}
+
+	@Override
+	public List<Singer> searchSinger(String searchText) {
+		Session currentSession = sessionFactory.getCurrentSession();
+		List<Singer> singers = (List<Singer>) currentSession
+			.createQuery("Select new Singer(s.id, s.name, s.story, s.imageUrl) from Singer s where s.name LIKE CONCAT('%', :searchText, '%')")
+			.setParameter("searchText", searchText)
+			.getResultList();
+		return singers;
 	}
 }

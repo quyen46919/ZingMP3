@@ -41,4 +41,22 @@ public class HomeServiceImpl implements HomeService{
 	public List<Song> getSongList() {
 		return songDAO.getSongList();
 	}
+	
+	@Override
+	@Transactional
+	public List<Singer> searchSinger(String searchText) {
+		return singerDAO.searchSinger(searchText);
+	}
+	
+	@Override
+	@Transactional
+	public List<Song> searchSong(String searchText) {
+		return songDAO.searchSong(searchText);
+	}
+	
+	@Override
+	@Transactional
+	public List<Album> searchAlbum(String searchText) {
+		return albumDAO.searchAlbum(searchText);
+	}
 }

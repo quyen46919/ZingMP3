@@ -158,6 +158,10 @@
   z-index: 3;
   cursor: pointer;
 }
+
+.header form {
+	margin: 0px!important;
+}
 .header--search {
   height: 40px;
   width: 70%;

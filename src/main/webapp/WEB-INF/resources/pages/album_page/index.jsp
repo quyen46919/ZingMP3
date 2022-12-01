@@ -82,7 +82,9 @@
 	                                    <div class="album-page__content--item-timeOut">
 	                                        <span></span>
 	                                        <div class="album-page__content--item-timeOut--backdrop">
-	                                            <button><i class="fa-regular fa-heart"></i></button>
+	                                            <a href="${pageContext.request.contextPath}/profile/favorite-song/?userEmail=${email}&songId=${song.id}">
+	                                            	<i class="fa-regular fa-heart"></i>
+	                                            </a>
 	                                            <button>
 	                                                <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
 	                                            </button>

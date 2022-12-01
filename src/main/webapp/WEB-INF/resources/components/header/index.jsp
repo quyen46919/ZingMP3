@@ -5,10 +5,10 @@
    <div class="header--left">
        <i class="fa fa-arrow-left"></i>
        <i class="fa fa-arrow-right" aria-hidden="true"></i>
-       <div class="header--search">
+       <form class="header--search" action="${pageContext.request.contextPath}/search/">
            <i class="fa fa-search" aria-hidden="true"></i>
-           <input type="text" spellcheck="false" placeholder="Tìm kiếm bài hát, nghệ sĩ, lời bài hát..." />
-       </div>
+           <input type="text" name="searchText" spellcheck="false" placeholder="Tìm kiếm bài hát, nghệ sĩ, lời bài hát..." />
+       </form>
    </div>
    <div class="header--right">
        <button>

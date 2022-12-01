@@ -71,4 +71,14 @@ public class AlbumDAOImpl implements AlbumDAO {
 
 		return album;
 	}
+	
+	@Override
+	public List<Album> searchAlbum(String searchText) {
+		Session currentSession = sessionFactory.getCurrentSession();
+		List<Album> albums = (List<Album>) currentSession
+			.createQuery("Select new Album(a.id, a.name, a.description, a.imageUrl) from Album a where a.name LIKE CONCAT('%', :searchText, '%')")
+			.setParameter("searchText", searchText)
+			.getResultList();
+		return albums;
+	}
 }

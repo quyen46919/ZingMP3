@@ -142,6 +142,11 @@
   align-items: center;
   flex-wrap: nowrap;
 }
+
+.header form {
+	margin: 0px!important;
+}
+
 .header--left {
   height: 100%;
   width: 60%;

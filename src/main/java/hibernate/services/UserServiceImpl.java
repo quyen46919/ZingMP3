@@ -33,4 +33,9 @@ public class UserServiceImpl implements UserService{
 		return userDAO.checkUser(email);
 	}
 	
+	@Override
+	@Transactional
+	public boolean addFavoriteSong(String email, String songId) {
+		return userDAO.addFavoriteSong(email, songId);
+	}
 }

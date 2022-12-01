@@ -9,4 +9,5 @@ public interface AlbumDAO {
 	public List<Album> getAlbumList();
 	public boolean deleteAlbum(String albumId);
 	public Album getAlbumSongList(String id);
+	public List<Album> searchAlbum(String searchText);
 }
