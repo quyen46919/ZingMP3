@@ -53,4 +53,29 @@ public class SingerDAOImpl implements SingerDAO{
 			.getResultList();
 		return singers;
 	}
+	
+	@Override
+	public boolean updateSinger(Singer singer) {
+		Session currentSession = sessionFactory.getCurrentSession();
+		Query query = currentSession.createQuery("Select new Singer(s.id, s.name, s.story, s.imageUrl) from Singer s where s.id =:id", Singer.class);
+		query.setParameter("id", singer.getId());
+		Singer existedSinger = (Singer) query.getSingleResult();
+		
+//		Singer existedSinger = (Singer) currentSession.get(Singer.class, singer.getId());
+		
+		if (singer.getImageUrl() != null) {
+			existedSinger.setImageUrl(singer.getImageUrl());
+		}
+
+		existedSinger.setName(singer.getName());
+		existedSinger.setStory(singer.getStory());
+		
+		System.out.println("existedSinger" + existedSinger);
+		try {
+			currentSession.saveOrUpdate(existedSinger);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
 }

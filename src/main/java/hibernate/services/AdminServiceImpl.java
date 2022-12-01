@@ -57,6 +57,12 @@ public class AdminServiceImpl implements AdminService {
 	public boolean deleteSinger(String singerId) {
 		return singerDAO.deleteSinger(singerId);
 	}
+	
+	@Override
+	@Transactional
+	public boolean updateSinger(Singer singer) {
+		return singerDAO.updateSinger(singer);
+	}
 
 	@Override
 	public Song createSong(Song song) {

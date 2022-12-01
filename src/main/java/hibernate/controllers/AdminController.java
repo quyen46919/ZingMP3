@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.ServletContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -100,6 +101,28 @@ public class AdminController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		return "redirect:/admin/";
+	}
+	
+	@PostMapping("/update-singer")
+	@Transactional
+	public String updateSinger(
+//			@RequestParam("id") String id,
+//			@RequestParam("name") String name,
+//			@RequestParam("story") String story
+			@ModelAttribute("singer") Singer singer
+	) {
+
+		System.out.println("SINGER IS " + singer);
+		System.out.println("singer.getImageFile() = " + singer.getImageFile());
+		if (!singer.getImageFile().isEmpty()) {
+			FileUploader imageUploader = new FileUploader(singer.getImageFile());
+			String filePath = imageUploader.transfer();
+			singer.setImageFile(null);
+			singer.setImageUrl(filePath);
+		}
+		adminService.updateSinger(singer);
+		
 		return "redirect:/admin/";
 	}
 	

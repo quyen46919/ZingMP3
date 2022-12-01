@@ -24,7 +24,7 @@
         <div class="admin-page">
             <jsp:include page="../../components/header/index.jsp"></jsp:include>
             <div class="admin-page__favorite-song">
-                <h2>QUẢN LÝ - QUẢN TRỊ VIÊN</h2>
+                <h2>QUẢN TRỊ VIÊN</h2>
                 <div id="tabs" class="admin-page__favorite-song--header">
                     <ul class="button-tabs">
                         <li>
@@ -285,7 +285,7 @@
 	                                                <span><c:out value="${singer.story}" /></span>
 	                                            </div>
 	                                            <div class="admin-page__favorite-song--time-out">
-	                                                <button>
+	                                                <button class="update-btn" id="${singer.id }" singerName="${singer.name}" singerStory="${singer.story }">
 	                                                    <i class="fa-solid fa-pen"></i>
 	                                                </button>
                                                     <a href="${pageContext.request.contextPath}/admin/delete-singer?id=${singer.id}">
@@ -322,6 +322,27 @@
                 </div>
             </div>
         </div>
+		<div class="admin-page__modal-box">
+		  <div class="modal-content">
+		    <span class="close">&times;</span>
+		    <p>Cập nhật thông tin ca sĩ</p>
+		    <form:form
+               action="${pageContext.request.contextPath}/admin/update-singer" 
+               class="admin-page__form-inputs" 
+               method="POST"
+               enctype="multipart/form-data"
+               modelAttribute="singer"
+           	>
+           		<form:input id="update-form-id" type="hidden" placeholder="Tên ca sĩ" path="id"/>
+                <form:input id="update-form-name" type="text" placeholder="Tên ca sĩ" path="name"/>
+                <form:input id="update-form-story" type="text" placeholder="Mô tả của ca sĩ" path="story"/>
+                <input type="file" name="imageFile" path="imageFile"/>
+                <button type="submit">
+                    Cập nhật
+                </button>
+            </form:form>
+		  </div>
+		</div>
     </div>
 </body>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -341,6 +362,34 @@
   		$('.admin-page__singer-error').css("display", "none");
   	}
    	$( "#song_country, #song_type, #song_album, #song_singer" ).selectmenu();
+   	
+   	$(document).ready(function () {
+   	  var modal = $('.admin-page__modal-box');
+   	  var btn = $('.update-btn');
+   	  var span = $('.close');
+   	  var updateFormNameInput = $('#update-form-name');
+   	  var updateFormStoryInput = $('#update-form-story');
+   	  var updateFormIdInput = $('#update-form-id');
+
+   	  btn.each(function(index) {
+   		$(this).click(function () {
+   	   	    modal.show();
+  	   		updateFormIdInput.val($(this).attr("id"))
+   	   		updateFormNameInput.val($(this).attr("singerName"))
+   	   		updateFormStoryInput.val($(this).attr("singerStory"))
+   	  	});
+
+   	  	span.click(function () {
+   	    	modal.hide();
+   	  	});
+
+   	  });
+	  	$(window).on('click', function (e) {
+	    	if ($(e.target).is('.modal')) {
+	      		modal.hide();
+	    	}
+	  	});
+   	});
 </script>
 
 </html>

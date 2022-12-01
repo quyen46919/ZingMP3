@@ -8,4 +8,5 @@ public interface SingerDAO {
 	public List<Singer> getSingerList();
 	public boolean deleteSinger(String singerId);
 	public List<Singer> searchSinger(String searchText);
+	public boolean updateSinger(Singer singer);
 }

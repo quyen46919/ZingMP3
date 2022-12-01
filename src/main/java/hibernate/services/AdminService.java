@@ -14,8 +14,10 @@ public interface AdminService {
 	public Singer createSinger(Singer singer);
 	public boolean deleteSinger(String singerId);
 	public List<Singer> getSingerList();
+	public boolean updateSinger(Singer singer);
 	
 	public Song createSong(Song song);
 	public boolean deleteSong(String songId);
 	public List<Song> getSongList();
+	
 }
