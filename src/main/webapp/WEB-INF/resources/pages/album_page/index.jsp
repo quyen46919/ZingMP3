@@ -59,7 +59,7 @@
                         </div>
                         <div class="album-page__content--element">
                             <c:forEach items="${album.songs}" var="song" varStatus="myIndex">
-	                            <div class="album-page__content--card" id="${song.source}" songName="${song.name}" songType="${song.type}">
+	                            <div class="album-page__content--card" songImageUrl="${song.imageUrl }" id="${song.source}" songName="${song.name}" songType="${song.type}">
 	                                <div class="album-page__content--item">
 	                                    <div class="album-page__content--item--fakeDiv">
 	                                        <div class="album-page__content--item-number">
@@ -547,7 +547,7 @@
             <div class="album-page__playSong">
                 <div class="album-page__left">
                     <div class="album-page__left--img">
-                        <img src="${album.imageUrl }" alt="">
+                        <img src="${album.imageUrl }" alt="" id="album-page__current-song-img">
                     </div>
                     <div class="album-page__left--title">
                         <span id="album-page__song-name"></span>
@@ -582,7 +582,7 @@
                 </div>
             </div>
         </div>
-        </div>
+     </div>
             
     </div>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -622,6 +622,7 @@
        		  	$('#play-pause').html("<i class='fa-solid fa-pause'></i>");
        		  	$('#album-page__song-name').html($(this).attr('songName'));
        		  	$('#album-page__song-type').html($(this).attr('songType'));
+       		  	$('#album-page__current-song-img').attr("src", $(this).attr("songImageUrl"));
        		  	$('.album-page__content--cover').css("border-radius", "50%").css("animation", "rotation 20s infinite linear");
        		})
     	});

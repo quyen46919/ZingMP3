@@ -285,7 +285,12 @@
 	                                                <span><c:out value="${singer.story}" /></span>
 	                                            </div>
 	                                            <div class="admin-page__favorite-song--time-out">
-	                                                <button class="update-btn" id="${singer.id }" singerName="${singer.name}" singerStory="${singer.story }">
+	                                                <button class="update-btn" 
+		                                                id="${singer.id }" 
+		                                                singerName="${singer.name}" 
+		                                                singerStory="${singer.story }"
+		                                                singerAvatar="${singer.imageUrl }"
+	                                                >
 	                                                    <i class="fa-solid fa-pen"></i>
 	                                                </button>
                                                     <a href="${pageContext.request.contextPath}/admin/delete-singer?id=${singer.id}">
