@@ -425,6 +425,11 @@ button {
 	gap: 40px;
 }
 
+.album-page__hidden {
+	display: hidden;
+	opacity: 0;
+}
+
 .album-page button {
 	width: 45px;
 	height: 45px;
@@ -495,6 +500,16 @@ button {
 	border-radius: 5px;
 	position: relative;
 	cursor: pointer;
+	transition: 0.5s;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .album-page__content--cover * {
@@ -1701,8 +1716,8 @@ button {
 }
 
 .album-page__new--cover-backdrop button:nth-child(2) {
-	height: calc($ buttonSize + 10px);
-	width: calc($ buttonSize + 10px);
+	height: calc($buttonSize + 10px);
+	width: calc($buttonSize + 10px);
 }
 
 .album-page__new--cover-backdrop button:nth-child(2)>i {
@@ -1791,6 +1806,7 @@ button {
 	justify-content: space-between;
 	align-items: center;
 	flex-wrap: nowrap;
+	display: none;
 }
 
 .album-page__left {
@@ -1809,6 +1825,8 @@ button {
 .album-page__left--img {
 	height: 65px;
 	width: 65px;
+	min-height: 65px;
+	min-width: 65px;
 	border-radius: 5px;
 	overflow: hidden;
 }
@@ -1922,7 +1940,9 @@ button {
 	background-color: transparent;
 }
 
-.album-page__center--control button:hover {
+.album-page__center--control button:hover,
+.album-page__center--control button#random.active,
+.album-page__center--control button#loop.active {
 	background-color: rgba(255, 255, 255, 0.126);
 }
 
@@ -1983,6 +2003,28 @@ button {
 	width: 80px;
 	border-bottom: 2px solid #8c99ab;
 	margin-bottom: 10px;
+}
+
+#progress {
+    width: 80%;
+    -webkit-appearance: none;
+    height: 6px;
+    background: #989898;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+    border-radius: 20px;
+  }
+  
+#progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 6px;
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: 20px;
 }
 
 /*# sourceMappingURL=styles.css.map */

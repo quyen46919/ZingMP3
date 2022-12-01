@@ -58,14 +58,12 @@
                             </div>
                         </div>
                         <div class="album-page__content--element">
-                            <c:forEach items="${album.songs}" var="song">
-	                            <div class="album-page__content--card">
+                            <c:forEach items="${album.songs}" var="song" varStatus="myIndex">
+	                            <div class="album-page__content--card" id="${song.source}" songName="${song.name}" songType="${song.type}">
 	                                <div class="album-page__content--item">
 	                                    <div class="album-page__content--item--fakeDiv">
 	                                        <div class="album-page__content--item-number">
-	                                            <div class="album-page__content--item-number--backdrop">
-	                                                <input type="checkbox" name="" value="">
-	                                            </div>
+				                            	<span>${myIndex.index + 1}</span>
 	                                        </div>
 	                                        <div class="album-page__content--item-song">
 	                                            <div class="album-page__content--item-song--img">
@@ -82,7 +80,7 @@
 	                                        </div>
 	                                    </div>
 	                                    <div class="album-page__content--item-timeOut">
-	                                        <span>02:23</span>
+	                                        <span></span>
 	                                        <div class="album-page__content--item-timeOut--backdrop">
 	                                            <button><i class="fa-regular fa-heart"></i></button>
 	                                            <button>
@@ -547,37 +545,37 @@
             <div class="album-page__playSong">
                 <div class="album-page__left">
                     <div class="album-page__left--img">
-                        <img src="https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_webp/cover/7/9/7/3/797341cb82655834e312b7fcdcbcdedc.jpg"
-                            alt="">
+                        <img src="${album.imageUrl }" alt="">
                     </div>
                     <div class="album-page__left--title">
-                        <span>Stay (Prod. DAUL)</span>
-                        <span><a href="">Evy</a></span>
+                        <span id="album-page__song-name"></span>
+                        <br/>
+                        <span id="album-page__song-type"></span>
                     </div>
-
-                    <button><i class="far fa-heart"></i></button>
-                    <button><i class="fa fa-ellipsis-h" aria-hidden="true"></i></button>
                 </div>
                 <div class="album-page__center">
                     <div class="album-page__center--control">
-                        <button><i class="fas fa-random"></i></button>
-                        <button><i class="fas fa-step-backward"></i></button>
-                        <button><i class="fas fa-play"></i></button>
-                        <button><i class="fas fa-step-forward"></i></button>
-                        <button><i class="fas fa-repeat"></i></button>
+                        <button id="random"><i class="fas fa-random"></i></button>
+                        <button id="play-prev"><i class="fas fa-step-backward"></i></button>
+                        <button id="play-pause"><i class="fas fa-play"></i></button>
+                        <button id="play-next"><i class="fas fa-step-forward"></i></button>
+                        <button id="loop"><i class="fas fa-repeat"></i></button>
                     </div>
                     <div class="album-page__center--play">
-                        <span>00:00</span>
-                        <div class="album-page__center--line"></div>
-                        <span>02:41</span>
+                        <span id="current-time">00:00</span>
+                        <input id="progress" class="progress" type="range" value="0" step="1" min="0" max="100">
+                        <span id="end-time">00:00</span>
                     </div>
+                    <audio id="audio-player" src=""></audio>
                 </div>
                 <div class="album-page__right">
                     <button><i class="fa-solid fa-compact-disc"></i></button>
                     <button><i class="fa-solid fa-microphone"></i></button>
                     <button><i class="fa-solid fa-display"></i></button>
-                    <button><i class="fa-solid fa-volume-high"></i></button>
-                    <div class="album-page__right--line"></div>
+                    <button id="mute-audio"><i class="fa-solid fa-volume-high"></i></button>
+                    <div>
+                    	<input type="range" id="audio-volume" min="0" max="100" value="100"/>
+                    </div>
                     <button><i class="fa-solid fa-sliders"></i></button>
                 </div>
             </div>
@@ -588,7 +586,193 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script><%@include file="/WEB-INF/resources/components/header/accountPopUp.js"%></script>
+    <script>
+    $(document).ready(function(){
+    	<%@include file="/WEB-INF/resources/components/header/accountPopUp.js"%>
+	 	var audio = new Audio();
+	 	var audioDuration;
+    	const audioPlayer = document.querySelector("#audio-player");
+    	const inputProgress = document.querySelector("#progress");
+    	const currentTime = document.querySelector("#current-time");
+    	var isPlaying = audio.currentTime > 0 && !audio.paused && !audio.ended && audio.readyState > audio.HAVE_CURRENT_DATA;
+    	var isLoop = false;
+    	var isRandom = false;
+    	var currentVolume = 1;
+	 	
+    	$('.album-page__content--card').each(function(index) {
+    		$(this).click(function() {
+    			$('.album-page__playSong').css('display', 'flex');
+    			
+    			audioPlayer.pause();
+       		 	audioPlayer.src = $(this).attr('id');
+
+       		 	audioPlayer.addEventListener('loadedmetadata', () => {
+        		  	audioDuration = audioPlayer.duration;
+        		  	
+        		  	var minutes = "0" + Math.floor(audioDuration / 60);
+        		  	var seconds = "0" +  Math.floor(audioDuration - minutes * 60);
+        		  	var dur = minutes.substr(-2) + ":" + seconds.substr(-2);
+           		  	$('#end-time').html(dur);
+       		 	})
+       		 	
+       		 	audioPlayer.play();
+       		 	
+       		  	$('#play-pause').html("<i class='fa-solid fa-pause'></i>");
+       		  	$('#album-page__song-name').html($(this).attr('songName'));
+       		  	$('#album-page__song-type').html($(this).attr('songType'));
+       		  	$('.album-page__content--cover').css("border-radius", "50%").css("animation", "rotation 20s infinite linear");
+       		})
+    	});
+
+    	$('#play-pause').click(function() {
+    		if (audioPlayer.paused) {
+    			audioPlayer.play();
+       		  	$('#play-pause').html("<i class='fa-solid fa-pause'></i>");
+       		  	$('.album-page__content--cover').css("border-radius", "50%").css("animation", "rotation 20s infinite linear");
+    		} else {
+    			audioPlayer.pause();
+       		  	$('#play-pause').html("<i class='fas fa-play'></i>");
+       		  	$('.album-page__content--cover').css("border-radius", "5px").css("animation", "");
+    		}
+    	})
+    	
+    	audioPlayer.addEventListener("loadedmetadata", () => {
+	    	audioPlayer.addEventListener("timeupdate", (e) => {
+	        	const currentTime = e.target.currentTime;
+		        const progressPercent = Math.floor(
+		           (currentTime / audioDuration) * 100
+		        );
+		        document.querySelector("#progress").value = progressPercent;
+	
+		        // update playing song current time
+		        let currentMin = Math.floor(currentTime / 60);
+		        let currentSec = Math.floor(currentTime % 60);
+		        currentMin = currentMin < 10 ? "0" + currentMin : currentMin;
+		        currentSec = currentSec < 10 ? "0" + currentSec : currentSec;
+		        const timeS = currentMin + ":" + currentSec;
+		        document.querySelector("#current-time").innerText = timeS;
+	      	});
+    	});
+    	
+    	document.querySelector("#progress").onchange = (e) => {
+            const seekTime = audioDuration / 100 * e.target.value;
+			document.querySelector("#audio-player").currentTime = seekTime;
+        }
+    	
+    	function changeSong(DOM) {
+        	audioPlayer.pause();
+   		 	audioPlayer.src = DOM.attr('id');
+
+   		 	audioPlayer.addEventListener('loadedmetadata', () => {
+    		  	audioDuration = audioPlayer.duration;
+    		  	
+    		  	var minutes = "0" + Math.floor(audioDuration / 60);
+    		  	var seconds = "0" +  Math.floor(audioDuration - minutes * 60);
+    		  	var dur = minutes.substr(-2) + ":" + seconds.substr(-2);
+       		  	$('#end-time').html(dur);
+   		 	})
+   		 
+   		 	audioPlayer.play();
+   		  	$('#album-page__song-name').html(DOM.attr('songName'));
+   		  	$('#album-page__song-type').html(DOM.attr('songType'));
+    	}
+    	
+    	$('#play-next').click(function() {
+    		$('.album-page__content--card').each(function(index) {
+        		if ($(this).attr('id') == $("#audio-player").attr('src')) {
+               		console.log("next");
+        			if ($(this).is(':last-child')) {
+        				changeSong($('.album-page__content--card:first-child'));
+        				return;
+        			}
+               		changeSong($(this).next());
+               		return false;
+        		}
+        	});
+    	})
+    	
+    	$('#play-prev').click(function() {
+    		$('.album-page__content--card').each(function(index) {
+        		if ($(this).attr('id') == $("#audio-player").attr('src')) {
+        			console.log(index);
+        			if ($(this).is(':first-child')) {
+        				console.log($('.album-page__content--card').last());
+        				changeSong($('.album-page__content--card').last());
+        				return;
+        			}
+               		console.log("prev");
+               		changeSong($(this).prev());
+               		return false;
+        		}
+        	});
+    	})
+    	
+    	// Tính năng loop và random
+    	$('#random').toggle(function () {
+		    $("#random").addClass("active");
+		    isRandom = true;
+		}, function () {
+		    $("#random").removeClass("active");
+		    isRandom = false;
+		});
+    	
+    	$('#loop').toggle(function () {
+		    $("#loop").addClass("active");
+		    isLoop = true;
+		}, function () {
+		    $("#loop").removeClass("active");
+		    isLoop = false;
+		});
+
+        // Xử lí next audio khi end audio        
+        $('#audio-player').on('ended', function() {
+        	console.log("end audio");
+        	if (isRandom) {
+        		var newIndex = Math.floor(Math.random() * $('.album-page__content--card').length);
+        		
+        		do {
+        			newIndex = Math.floor(Math.random() * $('.album-page__content--card').length);
+        		} while ($('.album-page__content--card:nth-child(' + newIndex + ")").attr("id") == audioPlayer.src) {
+            		changeSong($('.album-page__content--card:nth-child(' + newIndex + ")"));
+        		}
+        	}
+        	
+            if(isLoop) {
+            	audioPlayer.pause();
+            	audioPlayer.currentTime = 0;
+            	audioPlayer.play();
+            	return;
+            }
+
+        	  $('#play-next').click();
+       	});
+        
+        // tăng giảm âm lượng bài hát
+        $('#audio-volume').on('change', function(e) {
+        	const volume = parseInt(e.target.value) / 100;
+        	currentVolume = volume;
+        	audioPlayer.volume = volume;
+        	
+        	if (volume === 0) {
+        		$('#mute-audio').html("<i class='fa-solid fa-volume-xmark'></i>");
+        	} else {
+        		$('#mute-audio').html("<i class='fa-solid fa-volume-high'></i>");
+        	}
+        })
+        
+        $('#mute-audio').toggle(function() {
+    		$('#mute-audio').html("<i class='fa-solid fa-volume-xmark'></i>");
+        	audioPlayer.volume = 0;
+        	$('#audio-volume').val(0);
+        }, function() {
+        	console.log("currentVolume", currentVolume);
+    		$('#mute-audio').html("<i class='fa-solid fa-volume-high'></i>");
+        	audioPlayer.volume = currentVolume;
+        	$('#audio-volume').val(currentVolume * 100);
+        })
+        
+    });
+    </script>
 </body>
 
 </html>
